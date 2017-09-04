@@ -19,6 +19,8 @@ Route::get('/dashboard', function () {
     return 'You are authorized to see this page';
 })->middleware('auth');
 
+Route::get('/dashboard', 'DashboardController@index');
+
 Route::get('/auth/github', 'Auth\LoginController@redirectToServiceProvider')
     ->name('login');
 Route::get('/auth/github/callback', 'Auth\LoginController@handleProviderCallback');
